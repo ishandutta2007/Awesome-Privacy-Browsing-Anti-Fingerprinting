@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="340" style="background: #090d16; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-radius: 12px; overflow: hidden;">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="badge-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.1" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+      50% { transform: scale(1.15) translate(15px, -10px); opacity: 0.65; }
+    }
+    @keyframes radarSweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes shieldGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4)); }
+      50% { filter: drop-shadow(0 0 24px rgba(129, 140, 248, 0.8)); }
+    }
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+      50% { transform: translateY(-25px) translateX(12px); opacity: 0.7; }
+    }
+    @keyframes trackLine {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .orb-1 { animation: pulseOrb 8s ease-in-out infinite; transform-origin: 200px 100px; }
+    .orb-2 { animation: pulseOrb 10s ease-in-out infinite reverse; transform-origin: 1000px 240px; }
+    .radar { animation: radarSweep 12s linear infinite; transform-origin: 1040px 170px; }
+    .shield-icon { animation: shieldGlow 4s ease-in-out infinite; }
+    .particle-1 { animation: floatParticle 5s ease-in-out infinite; }
+    .particle-2 { animation: floatParticle 7s ease-in-out infinite 1.5s; }
+    .particle-3 { animation: floatParticle 6s ease-in-out infinite 3s; }
+    .data-stream { stroke-dasharray: 20, 10; animation: trackLine 15s linear infinite; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" />
+
+  <!-- Background Animated Glowing Orbs (Depth Layer) -->
+  <circle class="orb-1" cx="220" cy="90" r="140" fill="#38bdf8" filter="url(#glow)" opacity="0.25" />
+  <circle class="orb-2" cx="1020" cy="220" r="160" fill="#818cf8" filter="url(#glow)" opacity="0.2" />
+
+  <!-- Cyber Grid Matrix (Background) -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="340" />
+    <line x1="300" y1="0" x2="300" y2="340" />
+    <line x1="450" y1="0" x2="450" y2="340" />
+    <line x1="600" y1="0" x2="600" y2="340" />
+    <line x1="750" y1="0" x2="750" y2="340" />
+    <line x1="900" y1="0" x2="900" y2="340" />
+    <line x1="1050" y1="0" x2="1050" y2="340" />
+  </g>
+
+  <!-- Animated Floating Particles (Background Layer) -->
+  <circle class="particle-1" cx="180" cy="260" r="3" fill="#38bdf8" />
+  <circle class="particle-2" cx="640" cy="70" r="2.5" fill="#c084fc" />
+  <circle class="particle-3" cx="1120" cy="110" r="3" fill="#818cf8" />
+  <circle class="particle-1" cx="820" cy="290" r="2" fill="#38bdf8" />
+
+  <!-- Animated Privacy Radar / Fingerprint Scanner Graphic (Right Wing) -->
+  <g opacity="0.35">
+    <circle cx="1040" cy="170" r="105" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4,6" />
+    <circle cx="1040" cy="170" r="75" fill="none" stroke="#818cf8" stroke-width="1.2" />
+    <circle cx="1040" cy="170" r="45" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+    <circle cx="1040" cy="170" r="15" fill="#38bdf8" opacity="0.4" />
+    <line class="radar" x1="1040" y1="170" x2="1040" y2="65" stroke="url(#primary-glow)" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Data Stream Path -->
+  <path class="data-stream" d="M 60 300 Q 250 320, 500 290 T 950 310 T 1150 280" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.2" />
+
+  <!-- FOREGROUND: Content Elements (Strictly on top to remain ultra-sharp and legible) -->
+
+  <!-- Top Category Chip -->
+  <g transform="translate(80, 48)">
+    <rect width="320" height="28" rx="14" fill="url(#badge-glow)" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="15" cy="14" r="4" fill="#10b981" />
+    <text x="28" y="18" fill="#7dd3fc" font-size="11" font-weight="700" letter-spacing="1.2">ZERO-TELEMETRY &amp; HARDENED BROWSING</text>
+  </g>
+
+  <!-- Main Headline Title (High-contrast, foreground) -->
+  <text x="80" y="128" fill="#ffffff" font-size="38" font-weight="800" letter-spacing="-0.5">
+    Awesome <tspan fill="url(#primary-glow)">Privacy Browsing</tspan>
+  </text>
+  <text x="80" y="174" fill="#ffffff" font-size="32" font-weight="750" letter-spacing="-0.3">
+    &amp; Anti-Fingerprinting
+  </text>
+
+  <!-- Subtitle (Clear explanation) -->
+  <text x="80" y="218" fill="#94a3b8" font-size="15" font-weight="450">
+    Curated Hub of Hardened Browsers, C++ Anti-Detect Engines, Tor Routing &amp; Tracker Shields
+  </text>
+
+  <!-- Foreground Feature Badges -->
+  <g transform="translate(80, 252)">
+    <!-- Badge 1: Anti-Canvas & WebGL -->
+    <rect x="0" y="0" width="175" height="32" rx="7" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="14" y="20" fill="#38bdf8" font-size="12" font-weight="600">🛡️ Canvas / WebGL Spoofing</text>
+
+    <!-- Badge 2: Tor / Onion Network -->
+    <rect x="187" y="0" width="145" height="32" rx="7" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="201" y="20" fill="#a78bfa" font-size="12" font-weight="600">🧅 Onion / Tor Uplift</text>
+
+    <!-- Badge 3: Remote Browser Isolation -->
+    <rect x="344" y="0" width="168" height="32" rx="7" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="358" y="20" fill="#34d399" font-size="12" font-weight="600">☁️ Cloud RBI &amp; Stealth API</text>
+
+    <!-- Badge 4: Open Source First -->
+    <rect x="524" y="0" width="150" height="32" rx="7" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="538" y="20" fill="#fbbf24" font-size="12" font-weight="600">⚡ Hardened user.js</text>
+  </g>
+
+  <!-- Shield Foreground Emblem -->
+  <g class="shield-icon" transform="translate(1005, 135)">
+    <path d="M35 0 L68 15 C68 45, 52 70, 35 80 C18 70, 2 45, 2 15 Z" fill="#0f172a" stroke="url(#primary-glow)" stroke-width="3" />
+    <!-- Checkmark inside Shield -->
+    <path d="M23 40 L31 48 L48 28" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
