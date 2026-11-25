@@ -63,7 +63,7 @@ The table below catalogs proprietary, commercial, and cloud-integrated privacy b
 
 A comprehensive collection of open-source privacy browsers, C++ anti-detect automation engines, hardening templates, and tracker-blocking extensions. **Ranked in descending order by GitHub stargazers**:
 
-| Repository / Project | Stars | Primary Focus & Fingerprinting Defense |
+| Repository / Project | GitHub_Stars | Primary Focus & Fingerprinting Defense |
 | :--- | :--- | :--- |
 | **[gorhill/uBlock](https://github.com/gorhill/uBlock)** | [![uBlock Stars](https://img.shields.io/github/stars/gorhill/uBlock?style=social&color=white)](https://github.com/gorhill/uBlock/stargazers) | Premier open-source wide-spectrum content blocker neutralizing trackers, fingerprinting scripts, and third-party beacons. |
 | **[pi-hole/pi-hole](https://github.com/pi-hole/pi-hole)** | [![Pi-hole Stars](https://img.shields.io/github/stars/pi-hole/pi-hole?style=social&color=white)](https://github.com/pi-hole/pi-hole/stargazers) | Network-wide DNS sinkhole shielding all local client browsers from telemetry trackers and data broker domains. |
